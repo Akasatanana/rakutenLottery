@@ -24,7 +24,7 @@
   <div class="god-frame">
     <div class="hukidasi">
       <img src="../image/hukidasi.png">
-      <p class="serif1">検索結果から<br>わしが選んだ商品をカートに<br>入れてあげるのじゃ</p>
+      <p class="serif1">検索結果から<br>わしが商品を選んできてあげるのじゃ</p>
       <p class="serif2">欲しい商品のキーワードを<br>入力するのじゃ</p>
     </div>
     <img class="god-image" src="../image/god.jpeg">

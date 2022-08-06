@@ -2,7 +2,7 @@
 $applicationid = 1062185259106686101;
 $keyword = $_POST["keyword"];
 //ページ数
-$pages = mt_rand(1, 100);
+$pages = mt_rand(1, 50);
 // Jsonに含まれるItemの数
 $hits = 30;
 // $row番目のItemを表示
@@ -50,19 +50,35 @@ if ($itemExists) {
 </head>
 
 <body>
-  <h1>おみくじ結果！</h1>
+  <?php
+  if ($itemExists) {
+    echo "<h1>おみくじ結果！</h1>";
+  } else {
+    echo "<h1>おみくじ結果、、、</h1>";
+  }
+  ?>
   <div class="god-frame">
     <div class="hukidasi">
       <img src="../image/hukidasi.png">
-      <p>この商品がおすすめじゃよ</p>
+      <?php
+      if ($itemExists) {
+        echo "<p>この商品がおすすめじゃよ</p>";
+      } else {
+        echo "<p>商品が見つからなかったのじゃ<br>ごめんなのじゃ</p>";
+      }
+      ?>
     </div>
     <img class="god-image" src="../image/god.jpeg">
   </div>
-  <div class="result-frame">
-    <img src=<?php echo $itemimageurl; ?>>
-    <h1><?php echo $itemprice; ?>円</h1>
-    <a href=<?php echo $itemurl; ?>><?php echo $itemname; ?></a>
-  </div>
+  <?php
+  if ($itemExists) {
+    echo "<div class='result-frame'>
+  <img src=$itemimageurl>
+  <h1>$itemprice 円</h1>
+  <a href=$itemurl>$itemname</a>
+  </div>";
+  }
+  ?>
   <!--背景設定-->
   <div class="bg-frame ZigZag"></div>
 
@@ -71,13 +87,12 @@ if ($itemExists) {
 
   <script>
     $.when(
-      $('h1').fadeIn(2000)
+      $('.god-frame').fadeIn(2000)
     ).done(function() {
-      $.when(
-        $('.god-frame').fadeIn(2000)
-      ).done(function() {
-        $('.result-frame').fadeIn(2000);
-      })
+      $('h1').fadeIn(2000)
+      $('.result-frame').fadeIn(2000);
+      $('.ZigZag').fadeIn(2000);
+      $('body').css('background-color', 'transparent');
     });
   </script>
 </body>

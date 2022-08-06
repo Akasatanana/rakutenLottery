@@ -15,12 +15,14 @@
         background-position: 20px 0, 20px 0, 0 0, 0 0;
         background-size: 40px 40px;
         background-repeat: repeat;
+        display: none;
     }
 
     body {
         font-family: 'Yomogi', cursive;
         min-height: 100vh;
         text-align: center;
+        background-color: rgba(0, 0, 0, 0.9);
     }
 
     .hukidasi {
@@ -37,7 +39,7 @@
     .hukidasi p {
         font-size: 3vw;
         position: absolute;
-        top: 0%;
+        top: 10%;
         left: 15%;
         max-width: 70%;
     }
