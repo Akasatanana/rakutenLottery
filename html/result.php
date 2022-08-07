@@ -73,9 +73,9 @@ if ($itemExists) {
   <?php
   if ($itemExists) {
     echo "<div class='result-frame'>
+    <a href=$itemurl>$itemname</a>
   <img src=$itemimageurl>
   <h1>$itemprice 円</h1>
-  <a href=$itemurl>$itemname</a>
   </div>";
   }
   ?>
